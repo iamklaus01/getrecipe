@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Recipe API</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/icone.png">
+        <script src="./assets/js/recipe.js" defer></script>
+    </head>
+    <body>
+        <div class="content d-print-none">
+            <div class="headers">
+                <h1>GET &nbsp;YOUR&nbsp; RECIPES&nbsp; HERE</h1>
+                <p>You have the possibilitiy to make your research by two ways</p>
+                <p>The first one : Enter the name of your meal and get informations about it</p>
+                <p>The second : Click <a href="#">here</a> and make a complex research</p>
+            </div>
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="Enter the name of your meal...">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+            <div class="card">
+                <img src="" class="card-img-top" alt="image picture">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <a href="#" class="btn btn-primary">See More</a>
+                </div>
+              </div>
+              <div class="move">  
+                <i class="fa fa-chevron-circle-left left" aria-hidden="true"></i>
+                <i class="fa fa-chevron-circle-right right" aria-hidden="true"></i>
+            </div>
+            <div class="result-box">
+                <div class="img-card">
+                    <img src="" class="card-img-top card-img-top-2" alt="image picture">
+                    <div class="card-body">
+                        <h5 class="card-title card-title-2">Card title</h5>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h3>General Informations</h3>
+                    <p class="duration"><span class="title">Duration : </span><span class="data"></span> minutes</p>
+                    <p class="servings"><span class="title">For : </span><span class="data"></span> people</p>
+                    <p class="healthScore"><span class="title">Health Score : </span><span class="data"></span> /100</p>
+                    <p class="url"><a href="#" target="_blank">I want to know how to cook it</a>&nbsp;&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i></p>
+                </div>
+                <div class="ingredients">
+                    <h3>Ingredients</h3>
+                    <ul>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="set-of-button">
+                <button type="button" class="btn btn-dark btn-sm text-center">Go Back</button>
+                <button type="button" class="btn btn-primary btn-sm text-center toPrint" title="Click here to print the recipe's card">Get the card</button>   
+            </div>
+            <div class="container d-print-none">
+                <div class="global-result">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="spinner-content d-print-none">
+            <h1 class="load">Wait a few seconds</h1>
+            <div class="spinner spinner__4"><span></span></div>
+        </div>
+        <div class="print-content d-none d-print-block">
+            <img src="" alt="The recipe's card">
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-hidden btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Launch pop-up
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <script src="./assets/js/jquery.min.js"></script>
+        <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+        <footer class="d-print-none">
+            &copy;2021 by <a href="mailto:iamklaus01@gmail.com">Klaus</a>
+        </footer>
+    </body>
+</html>
+    

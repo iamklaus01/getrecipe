@@ -1,0 +1,440 @@
+body{
+    margin: 0;
+    background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)) , url("../img/recipes-background.jpg");
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-attachment: fixed;
+    background-size: cover;
+    color:#212529
+}
+.content{
+    margin-top: 2%;
+    text-align: center;
+}
+.headers{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:rgba(255, 255, 255, .8);
+    letter-spacing: 1px;
+    margin-bottom: 5%;
+}
+h1{
+    padding: 10px;
+}
+p{
+    font-size: 1.1em;
+}
+/*Search field styles */
+.search {
+    width: 30%;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus{
+    color: #212529;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+/*Result box styles*/
+
+.card{
+    display: none;
+    width: 22rem;
+    height: 26rem;
+    margin:5%  auto;
+    padding: 10px;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0,.3) ;
+}
+.result-box{
+    display: none;
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+.result-box.show{
+    display: flex !important;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.info-card , .img-card , .ingredients{
+    width: 22rem;
+    height: 26rem;
+    margin:5%  auto;
+    padding: 20px;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0,.3) ;
+    border-radius: 2px;
+    background-color: #fff;
+    text-align: center;
+}
+.card-img-top{
+    width: 18rem !important;
+    height: 16rem !important;
+}
+.ingredients{
+    overflow-y: scroll;
+}
+.info-card .title{
+    font-weight: 400;
+    color: var(--info);
+    line-height: 34px;
+}
+.info-card .data{
+    font-weight: bold;
+}
+.result-box p{
+    line-height: 30px;
+    font-size: 18px;
+}
+ul li{
+    font-size: 16px;
+    line-height: 30px;
+}
+.set-of-button{
+    margin-right: 13%;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    pointer-events: none;
+}
+.set-of-button.not-hidden{
+    opacity: 1;
+    pointer-events: all;
+}
+.btn-sm{
+    padding: 6px 10px !important;
+    margin: 10px;
+}
+/*Global results box styles*/
+.container{
+    display: none;
+}
+
+/*Spinner styles */
+
+.spinner-content{
+    display: none; 
+    position: fixed;
+    background: linear-gradient(rgba(56, 209, 230), rgba(56, 209, 230));
+    height: 100vh !important;
+    width: 100vw !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    margin: auto 0;
+}
+.load{
+    text-align: center;
+    color: floralwhite;
+    position: absolute;
+    top: 32%;
+    left: 40%;
+}
+.spinner {
+    width: 70px;
+    height: 70px;
+    background: #eee;
+    border-radius: 50%;
+    position: relative;
+    margin-top: 25%;
+    margin-left: 49%;
+    display: inline-block;
+  }
+  .spinner:after, .spinner:before {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+.spinner__4 {
+    background: transparent;
+  }
+  .spinner__4 span {
+    width: 8px;
+    height: 8px;
+    background: #000;
+    position: absolute;
+    border-radius: 50%;
+    top: 15px;
+    left: 35px;
+  }
+  .spinner__4:before, .spinner__4:after {
+    display: block;
+    height: 0px;
+    width: 0px;
+    position: absolute;
+    border: 35px solid #FFCC00;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    animation: chunk-top 1s ease infinite;
+  }
+  .spinner__4:after {
+    border: 35px solid #FFCC00;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    animation: chunk-bottom 1s ease infinite;
+  }
+  
+  @keyframes chunk-top {
+    0%, 100% {
+      transform: rotate(-45deg);
+    }
+    50% {
+      transform: rotate(-80deg);
+    }
+  }
+  @keyframes chunk-bottom {
+    0%, 100% {
+      transform: rotate(-40deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+  }
+/*GoBack and GoAhead styles*/
+
+.left , .right{
+    position: absolute;
+    top: 34rem !important;
+    font-size: 60px !important;
+    background-color: transparent;
+    color: paleturquoise !important;
+    opacity: 0;
+    pointer-events: none;
+}
+.left:hover , .right:hover{
+    color: #00B4CC !important;
+    animation: 1s shaking infinite alternate;
+}
+.left{
+    left: 25%;
+}
+.right{
+    left: 71%;
+}
+.left.appear , .right.appear{
+    opacity: 1 !important;
+    pointer-events: all !important;
+}
+@keyframes shaking {
+    0%, 100% { transform: rotate(0deg); }
+    25%, 75% { transform: rotate(-12deg); }
+    50% { transform: rotate(12deg); }
+} 
+
+/*Pop-up styles*/
+.btn-hidden{
+    opacity: 0;
+    pointer-events: none;
+}
+
+/*Scrollbar styles*/
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    border-radius: 5px;
+    background-color: white;
+}
+::-webkit-scrollbar{
+    width: 8px;
+    background-color: var(--primary);
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: #00B4CC;
+    background-image: -webkit-linear-gradient(
+        45deg ,
+        rgba(255,255,255,.5) 25% ,
+        transparent 25% ,
+        transparent 50% ,
+        rgba(255,255,255,.5) 50% ,
+        rgba(255,255,255,.5) 75% ,
+        transparent 75% ,
+        transparent
+    );
+}
+
+footer{
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 2.2em;
+    text-align: center;
+    bottom: 0px;
+    background-color: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 0;
+}
+
+/*Media queries*/
+@media  screen and (max-width: 1140px){
+    body{
+        background-position: center ;
+    }
+    .set-of-button{
+        margin-right: 13%;
+    }
+    .search {
+        width: 40%;
+    }
+    .load{
+        left: 35%;
+    }
+    .spinner {
+        margin-left: 50%;
+    }
+}
+@media  screen and (max-width: 770px){
+    .set-of-button{
+        margin-right: 26% !important;
+    }
+    .load{
+        left: 30%;
+    }
+    .left , .right{
+        top: 30rem !important;
+    }
+    .left{
+        left: 17%;
+    }
+    .right{
+        left: 76%;
+    }
+}
+@media  screen and (max-width: 540px){
+    .set-of-button{
+        margin-right: 30% !important;
+    }
+    .search {
+        width: 60%;
+    }
+    .load{
+        left: 20%;
+    }
+    .spinner {
+        margin-left: 42%;
+    }
+    .left , .right{
+        top: 34rem !important;
+        font-size: 40px !important;
+    }
+    .left{
+        left: 7%;
+    }
+    .right{
+        left: 86%;
+    }
+}
+@media  screen and (max-width: 415px){
+    .set-of-button{
+        margin-right: 0 !important;
+        justify-content: space-around !important;
+    }
+    .load{
+        left: 5%;
+    }
+    .spinner {
+        margin-left: 42%;
+    }
+    .search {
+        width: 70%;
+    }
+    .info-card , .img-card , .ingredients , .card{
+        width: 20rem;
+    }
+    .card-img-top{
+        width: 16rem !important;
+    }
+    .left , .right{
+        top: 35rem !important;
+        font-size: 30px !important;
+    }
+    .left{
+        left: 3.5%;
+    }
+    .right{
+        left: 90%;
+    }
+}
+@media  screen and (max-width: 376px){
+    .headers h1{
+        font-size: 30px !important;
+    }
+    .headers p{
+        font-size: 1em !important;
+    }
+    .searchTerm{
+        font-size: 13px;
+    }
+    .info-card , .img-card , .ingredients , .card{
+        width: 18rem;
+        height: 24rem ;
+    }
+    .card-img-top{
+        height: 14rem !important;
+    }
+    .left , .right{
+        top: 33rem !important;
+        font-size: 30px !important;
+    }
+    .left{
+        left: 3.5%;
+    }
+    .right{
+        left: 90%;
+    }
+}
+@media  screen and (max-width: 320px){
+    .info-card , .img-card , .ingredients , .card{
+        width: 16rem;
+        height: 24rem ;
+    }
+    .card-img-top{
+        width: 14rem !important;
+    }
+    .left , .right{
+        font-size: 25px !important;
+    }
+    .left{
+        left: 2%;
+    }
+    .right{
+        left: 92%;
+    }
+}
+@media  screen and (max-width: 280px){
+    .info-card , .img-card , .ingredients , .card{
+        padding: 0 !important;
+    }
+    .card{
+        width: auto;
+    }
+    .left{
+        left: 1%;
+    }
+    .searchTerm{
+        font-size: 11px;
+    }
+}
